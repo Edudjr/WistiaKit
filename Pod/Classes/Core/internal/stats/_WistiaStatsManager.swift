@@ -204,7 +204,7 @@ internal protocol WistiaEventCollector : class {
 //
 // By making it an NSObject that conforms to NSCoding, it's easy to archive and unarchive.
 // Cant' wait until they update that sort of stuff for Swift.  but until then, we get bonus LOC...
-fileprivate class StatsEvent: NSObject, NSCoding {
+@objc(_TtC13WistiaKitCoreP33_7BBF6D837E25F572EB2C877506E5B04B10StatsEvent)fileprivate class StatsEvent: NSObject, NSCoding {
     let url: URL
     let json: [String: Any]
     let ttl: Int

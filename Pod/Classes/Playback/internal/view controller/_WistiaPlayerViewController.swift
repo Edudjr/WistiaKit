@@ -543,7 +543,7 @@ internal extension WistiaPlayerViewController {
         chromeInteractionTimer?.invalidate()
     }
 
-    internal func noChromeInteraction(){
+    @objc internal func noChromeInteraction(){
         presentForPlaybackShowingChrome(false)
     }
 
