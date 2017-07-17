@@ -219,9 +219,10 @@ public class WistiaMediaEventCollector : WistiaEventCollector {
         }
 
         let newID:String
-        if let adIdMgr = ASIdentifierManager.shared(), adIdMgr.isAdvertisingTrackingEnabled, let adId = adIdMgr.advertisingIdentifier {
+        let adId: UUID? = ASIdentifierManager.shared().advertisingIdentifier
+        if ASIdentifierManager.shared().isAdvertisingTrackingEnabled, adId != nil {
             //on web, this tracks user across all players on all pages in a single browser
-            newID = "\(guidPrefix())_\(adId.uuidString)"
+            newID = "\(guidPrefix())_\(adId!.uuidString)"
         } else {
             newID = "\(guidPrefix())_\(UUID().uuidString)"
         }
